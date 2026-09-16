@@ -12,9 +12,9 @@
   <meta property="og:title" content="Silicon Valley Data Science Summer Camp 2027" />
   <meta property="og:description" content="Skyus × Growing IQ — data science for the AI era. Early interest open for agents, schools & parents." />
   <meta property="og:type" content="website" />
-  <script type="module" crossorigin src="/skyus-sv-camp-preview/assets/main-CL7Ne9ZF.js"></script>
-  <link rel="modulepreload" crossorigin href="/skyus-sv-camp-preview/assets/config-BrJ6Jjz4.js">
-  <link rel="stylesheet" crossorigin href="/skyus-sv-camp-preview/assets/config-DFHQSubZ.css">
+  <script type="module" crossorigin src="/skyus-sv-camp-preview/assets/main-Btbxunzj.js"></script>
+  <link rel="modulepreload" crossorigin href="/skyus-sv-camp-preview/assets/config-DXp_U1ND.js">
+  <link rel="stylesheet" crossorigin href="/skyus-sv-camp-preview/assets/config-CBwoTvwx.css">
 </head>
 <body>
   <header class="site-header">
@@ -53,7 +53,7 @@
           <span><strong>Base</strong> CSUEB dorm (sample)</span>
           <span><strong>Travel</strong> Meet / dismiss SFO</span>
         </div>
-        <div class="hero-ctas">
+        <div class="hero-ctas" role="group" aria-label="Choose your path">
           <a class="btn btn-primary btn-lg" href="#inquire" data-role="Agent">I’m an agent / school</a>
           <a class="btn btn-ghost btn-lg" href="#inquire" data-role="Parent">I’m a parent</a>
         </div>
@@ -257,14 +257,14 @@
           <strong>2026 sample experiences — illustrative only.</strong> Named campuses and companies are
           <strong>subject to confirmation</strong> for 2027; educational alternatives apply if access changes.
         </p>
-        <div class="visits" aria-label="2026 sample experiences subject to confirmation">
-          <span class="visit-chip" title="2026 sample · subject to confirmation">Stanford</span>
-          <span class="visit-chip" title="2026 sample · subject to confirmation">Google</span>
-          <span class="visit-chip" title="2026 sample · subject to confirmation">Meta</span>
-          <span class="visit-chip" title="2026 sample · subject to confirmation">Tesla</span>
-          <span class="visit-chip" title="2026 sample · subject to confirmation">UC Berkeley</span>
-          <span class="visit-chip" title="2026 sample · subject to confirmation">MLB</span>
-          <span class="visit-chip" title="2026 sample · subject to confirmation">Qibus</span>
+        <div class="visits" aria-label="2026 sample experiences subject to confirmation · not endorsement">
+          <span class="visit-chip"><span class="visit-name">Stanford visit</span><span class="visit-note">sample 2026 · not endorsement</span></span>
+          <span class="visit-chip"><span class="visit-name">Google visit</span><span class="visit-note">sample 2026 · not endorsement</span></span>
+          <span class="visit-chip"><span class="visit-name">Meta visit</span><span class="visit-note">sample 2026 · not endorsement</span></span>
+          <span class="visit-chip"><span class="visit-name">Tesla visit</span><span class="visit-note">sample 2026 · not endorsement</span></span>
+          <span class="visit-chip"><span class="visit-name">UC Berkeley visit</span><span class="visit-note">sample 2026 · not endorsement</span></span>
+          <span class="visit-chip"><span class="visit-name">MLB experience</span><span class="visit-note">sample 2026 · subject to confirmation</span></span>
+          <span class="visit-chip"><span class="visit-name">Qibus</span><span class="visit-note">sample 2026 · subject to confirmation</span></span>
         </div>
       </div>
     </section>
@@ -388,12 +388,8 @@
           </p>
 
           <div class="form-card">
-            <div class="form-note" id="form-endpoint-note">
-              <strong>Dev note:</strong> <code>FORM_ENDPOINT</code> is not set.
-              Submissions show this success UI and <code>console.log</code> the payload;
-              a composed email to <strong>matt@skyus.sg</strong> also opens (mailto fallback).
-              Set <code>FORM_ENDPOINT</code> in <code>src/config.js</code> to your Formspree URL for production.
-            </div>
+            <!-- Dev/wiring note removed from public card; see README for Formspree + UTM presets -->
+            <div class="form-note" id="form-endpoint-note" hidden></div>
 
             <div id="thank-you" class="thank-you" role="status" aria-live="polite">
               <div class="check" aria-hidden="true">✓</div>
@@ -405,7 +401,19 @@
               <a class="btn btn-secondary" href="index.html">Back to top</a>
             </div>
 
-            <form id="inquiry-form" novalidate data-mailto-fallback="true">
+            <div id="form-capture-error" class="form-capture-error" role="alert" aria-live="assertive" hidden>
+              <h3>Online capture is not configured yet</h3>
+              <p>
+                This preview cannot verify lead capture until a form endpoint is wired.
+                Your inquiry was <strong>not</strong> submitted online.
+              </p>
+              <p class="form-capture-manual">
+                Manual contact (not verified capture):
+                <a href="mailto:matt@skyus.sg">matt@skyus.sg</a>
+              </p>
+            </div>
+
+            <form id="inquiry-form" novalidate>
               <div class="form-grid two-col">
                 <div class="form-group">
                   <label for="role">I am a <span class="req">*</span></label>
